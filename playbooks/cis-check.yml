@@ -1,0 +1,14 @@
+---
+- name: CIS Docker Benchmark Compliance Check
+  hosts: all
+  become: true
+  vars_files:
+    - ../roles/1_1/vars/main.yml
+  roles:
+    - role: 1_1
+      tasks_from: check.yml
+
+  tasks:
+    - name: Display the CIS Profile being applied
+      debug:
+        msg: 'CIS Benchmark Profile: {{ profile_level }}'

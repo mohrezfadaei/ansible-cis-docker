@@ -1,0 +1,6 @@
+---
+- name: Include audit checks
+  include_tasks: check.yml
+
+- name: Include remediation tasks
+  include_tasks: remediate.yml

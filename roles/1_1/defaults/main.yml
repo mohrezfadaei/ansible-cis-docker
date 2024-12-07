@@ -1,0 +1,28 @@
+---
+# Audit rules file path
+audit_rules_file: /etc/audit/rules.d/audit.rules
+
+# Docker directories for auditing
+docker_directories:
+  - path: /var/lib/docker
+    perm: war
+  - path: /etc/docker
+    perm: war
+  - path: /usr/bin/containerd
+    perm: war
+  - path: /usr/bin/containerd-shim
+    perm: war
+  - path: /usr/bin/containerd-shim-runc-v1
+    perm: war
+  - path: /usr/bin/containerd-shim-runc-v2
+    perm: war
+  - path: /usr/bin/runc
+    perm: war
+  - path: /run/containerd
+    perm: war
+
+docker_files:
+  - path: /etc/docker/daemon.json
+  - path: /etc/default/docker
+  - path: /etc/containerd/config.toml
+  - path: /etc/sysconfig/docker
